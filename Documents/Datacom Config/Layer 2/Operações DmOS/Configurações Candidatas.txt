@@ -1,9 +1,0 @@
-// Verificar as configurações/comandos que serão aplicadas com o commit, antes de executá-lo
-DmOS(config)#show configuration this  
-
-// Verificar a diferença entre a configuração ativa – Running (-) e a ser aplicada com o commit (+)
-DmOS(config)#show configuration diff  
-
-// Apagar todas as alterações de configuração realizadas após o último commit
-DmOS(config)#clear  
-// All configuration changes will be lost. Proceed? [yes, NO]  

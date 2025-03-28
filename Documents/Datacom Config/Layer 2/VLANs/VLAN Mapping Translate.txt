@@ -1,9 +1,0 @@
-// VLAN Mapping: Translate
-
-// Permite realizar a substituição/troca de um ID de VLAN por um outro. É necessário criar o mapeamento de ingress e egress.
-
-// Criar o mapeamento
-DmOS(config)#vlan-mapping interface <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> <egress | ingress> rule <rule_identifier> match vlan vlan-id <client_VLAN_ID>
-
-// Definir a ação e o novo ID de VLAN
-DmOS(config-rule-Replace-4000)#action replace vlan vlan-id <Replace_VLAN>

@@ -1,7 +1,0 @@
-// Link Aggregation: Balanceamento
-
-// Escolher a interface do LAG
-DmOS(config)#link-aggregation interface lag <1-32>
-
-// Modo do Balanceamento
-DmOS(config-la-if-lag-1)#load-balance <dst-ip | dst-mac | dynamic | enhanced | src-dst-ip | src-dst-mac | src-ip | src-mac>
