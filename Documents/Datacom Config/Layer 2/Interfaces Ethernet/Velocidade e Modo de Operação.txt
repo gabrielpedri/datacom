@@ -1,0 +1,29 @@
+// Velocidade e Modo de Operação
+
+// Desativar auto negociação das interfaces
+DmOS(config-gigable-ethernet-1/1/10)#no negotiation
+
+// Definir uma velocidade fixa para as interfaces elétricas
+DmOS(config-gigable-ethernet-1/1/10)#speed <10 | 100 | 1000>
+
+// Definir uma velocidade fixa para as interfaces ópticas 10 e 100
+DmOS(config-tan-gigable-ethernet-1/1/1)#speed 10
+
+// Definir uma velocidade fixa para as interfaces ópticas 100G
+DmOS(config-tan-gigable-ethernet-1/1/1)#speed <40G | 100G>
+
+// Definir o tipo de cabo das interfaces elétricas
+DmOS(config-gigable-ethernet-1/1/10)#mdix <auto | normal | xover>
+
+// Verificar as configurações da interface
+DmOS(config-gigabit-ethernet-1/1/10)#show
+
+DmOS#show interface <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> | tab
+
+DmOS#show running-config interface <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> <chassis/slot/port> | tab
+
+DmOS#show interface link
+
+DmOS#show interface <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> | tab | select statistics | repeat 2
+
+DmOS#show interface description

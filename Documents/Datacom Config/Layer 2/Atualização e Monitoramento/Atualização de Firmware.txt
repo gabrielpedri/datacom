@@ -1,0 +1,14 @@
+// Atualização de Firmware
+
+// Atualizar o firmware
+DmOS#request firmware add <protocol://ip_server/path/fw_name> source <ip_address | hostname | mgmt-1/1/1>
+
+// Protocolos disponíveis: TFTP / HTTP / SCP - IPv4 e IPv6
+
+// Alterar entre as posições de firmware ativo e inativo
+DmOS#request firmware activate
+// Warning: The system will reboot automatically in order to complete the activation process. Once initiated this process cannot be interrupted.
+
+// Verificar o firmware
+DmOS#show platform
+DmOS#show firmware

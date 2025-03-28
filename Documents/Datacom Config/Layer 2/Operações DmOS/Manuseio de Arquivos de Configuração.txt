@@ -1,0 +1,10 @@
+// Configuração default
+DmOS(config)#load factory-config
+
+// Sobrepor a configuração atual por um arquivo de configuração salvo
+DmOS(config)#load override <file-name>
+// Substituirá todas as configurações.
+
+// Mesclar um arquivo de configuração salvo com a configuração ativa/atual
+DmOS(config)#load merge <file-name>
+// Será incrementado nas configuração ativa/atual as configurações do arquivo selecionado.

@@ -1,0 +1,9 @@
+// VLAN Mapping
+
+// A interface que receberá a C-VLAN (Cliente/Acesso) deverá ser configurada para Untagged na S-VLAN e o lado da rede metro como Tagged
+
+// Criar um mapeamento para as C-VLANs
+DmOS(config)#vlan-mapping interface <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> ingress rule <rule_identifier> match vlan vlan-id <VLAN_ID | range VLAN_ID>
+
+// Adicionar ao mapeamento a S-VLAN
+DmOS(config-rule-ADD-SVLAN)#action add vlan vlan-id <Service_VLAN>

@@ -1,0 +1,16 @@
+// RSTP - Rapid Spanning Tree Protocol
+
+// Habilitar o RSTP
+DmOS(config)#spanning-tree mode rstp
+
+// Configurar a prioridade
+DmOS(config-spanning-tree)#bridge-priority <0-61440>
+
+// Mapear as interfaces que farão parte do RSTP
+DmOS(config-spanning-tree)#interface <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> <chassis/slot/port | lag>
+
+// Verificar o spanning-tree
+DmOS#show running-config spanning-tree
+DmOS#show running-config spanning-tree | tab
+DmOS#show spanning-tree
+DmOS#show spanning-tree <detail | extensive>

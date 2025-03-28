@@ -1,0 +1,19 @@
+// SNTP - Simple Network Time Protocol
+
+// Fuso horário
+DmOS(config)#clock timezone <timezone_name> <-12 to 14>
+
+// Configurar servidor SNTP
+DmOS(config)#sntp client
+DmOS(config)#sntp server <a.b.c.d | x:x:x:x::x>
+DmOS(config)#sntp min-poll <3-17>
+DmOS(config)#sntp max-poll <3-17>
+
+// Autenticação SNTP
+DmOS(config)#sntp authenticate
+DmOS(config)#sntp authentication-key <1-4294967295> md5 <MD5_key>
+
+// Verificar o SNTP
+DmOS#show sntp
+DmOS#show system clock
+DmOS#show running-config sntp

@@ -1,0 +1,18 @@
+// LLDP - Link Layer Discovery Protocol - IEEE802.1AB
+
+// Habilitar o LLDP
+DmOS(config)#lldp
+DmOS(lldp)#interface <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> <chassis/slot/port>
+
+// Verificar o LLDP
+DmOS#show lldp
+DmOS#show lldp <brief | detail | local | management | neighbors | statistics | unknown-tlvs>
+DmOS#debug enable proto-lldp
+
+// Exemplo de saída do comando show lldp
+DmOS#show lldp
+
+| LOCAL INTERFACE          | NEIGHBOR CHASSIS ID | CHASSIS ID       | SYSTEM NAME | PORT ID               | PORT DESCRIPTION      |
+|--------------------------|---------------------|------------------|-------------|-----------------------|-----------------------|
+| gigabit-ethernet-1/1/2   | 00:04:df:5e:20:17   | 00:04:df:5e:20:17| sw-23       | gigabit-ethernet-1/1/2| gigabit-ethernet-1/1/2|
+| gigabit-ethernet-1/1/3   | 00:04:df:5e:29:46   | 00:04:df:5e:29:46| sw-21       | gigabit-ethernet-1/1/3| gigabit-ethernet-1/1/3|

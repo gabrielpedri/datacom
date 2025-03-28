@@ -1,0 +1,38 @@
+// SNMP - Simple Network Management Protocol
+
+// Criar a comunidade
+DmOS(config)#snmp community <name_community> sec-name <name_community>
+
+// Habilitar o agente SNMP e o endereço IP que responderá ao SNMP
+DmOS(config)#snmp agent enabled
+DmOS(config)#snmp agent ip <ipaddr>
+
+// Versão do agente SNMP
+DmOS(config)#snmp agent version <v1 | v2c | v3>
+
+// Configurar o servidor SNMP
+DmOS(config)#snmp target <name_server> ip <ipaddr_server>
+DmOS(config-target-public)#tag [ std_v2_trap ]
+DmOS(config-target-public)#v2c sec-name <community>
+
+// Habilitar a notificação de traps
+DmOS(config)#snmp notify <std_v1_trap | std_v2_inform | std_v2_trap | std_v3_inform | std_v3_trap> type <inform | trap> tag <identification>
+
+// Interface Inband que receberá as requisições do SNMP
+DmOS(config)#snmp agent listen interface <interface_L3_name>
+
+// Permissão de acesso da Community para visualizações e alterações (quando diferente de public)
+DmOS(config)#snmp vacm group <name_community>
+DmOS(config-group-treinamento)#member <name_community>
+DmOS(config-group-treinamento)#sec-model v2c
+DmOS(config-group-treinamento)#access v2c no-auth-no-priv
+DmOS(config-group-treinamento)#read-view root
+DmOS(config-group-treinamento)#write-view root
+DmOS(config-group-treinamento)#notify-view root
+
+// Localização e contato
+DmOS(config)#snmp system contact <name_contact>
+DmOS(config)#snmp system location <name_location>
+
+// Exportar MIBs para um servidor externo
+DmOS#copy mibs protocol://ipaddress

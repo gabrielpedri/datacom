@@ -1,0 +1,36 @@
+// Salvar as configurações em um arquivo
+DmOS(config)#save <file-name>
+
+// Realizar commit e salvar as configurações
+DmOS(config)#commit save-running <file-name>
+
+// Verificar os arquivos salvos
+DmOS#file list
+DmOS#file show <file-name>
+
+// Editar um arquivo
+DmOS#file edit <file_name>
+// O editor de arquivos será aberto. Use "CRTMs" para salvar e "CRTMs" para sair do editor.
+
+// Comparar as configurações ativas com um arquivo salvo (running-config "-")
+DmOS#compare file <config_file>
+
+// Deletar arquivos de configuração
+DmOS#file delete <file-name>
+
+// Exportar as configurações para um servidor remoto
+DmOS#copy file <file-name> <protocol://ip_server>
+
+// Importar as configurações para um servidor remoto
+DmOS#copy file <protocol://ip_server> <file-name>
+// Caso o arquivo seja editado e reenviado ao equipamento com o mesmo nome, será apresentado a mensagem: The filename "config-150" already exists. Do you want to overwrite it?
+// Do you want to proceed (yes/no): yes
+
+DmOS#copy file <protocol://ip_server> <file-name> rename <new_file-name>
+// Exemplo:
+DmOS(config)#copy file tftp://172.26.136.17 config-150 rename config-150-import
+
+// Para aplicar as configurações importadas utilize o comando:
+// load override <file_name> e o commit
+
+// A transferência de arquivos pode ocorrer por TFTP (porta 69) ou SCP (porta 22)

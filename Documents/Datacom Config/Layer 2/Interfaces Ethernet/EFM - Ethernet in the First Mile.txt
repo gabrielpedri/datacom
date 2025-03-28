@@ -1,0 +1,10 @@
+// EFM - Ethernet in the First Mile
+
+// Habilitar o EFM em uma interface
+DmOS(config)#oam efm interface <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> <chassis/slot/port> mode <active | passive>
+
+// Para verificar:
+DmOS#show oam efm
+DmOS#show interface link
+DmOS#debug enable proto-efm
+DmOS#debug enable cpu-tx

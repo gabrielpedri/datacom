@@ -1,0 +1,15 @@
+// Configuração de Clock
+
+// Fuso horário
+DmOS(config)#clock timezone <timezone_name> <(-12) to 14>
+
+// Configurar o horário de forma manual
+DmOS#set system clock YYYYMMDD HH:MM:SS
+// Clock is set.
+
+// Verificar a data e hora do equipamento
+DmOS#show system clock
+
+// Verificar uptime
+DmOS#uptime
+DmOS#show system uptime

@@ -1,0 +1,22 @@
+// EAPS - Ethernet Automatic Protection Switching
+
+// Criar domínio de EAPS - 64 instâncias
+DmOS(config)#eaps <0-63>
+
+// Definir o nome do Domínio EAPS
+DmOS(config-eaps-0)#name <text>
+
+// Definir modo Master ou Transit
+DmOS(config-eaps-0)#mode <master | transit>
+
+// Definir porta primária
+DmOS(config-eaps-0)#port primary <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> <chassis/slot/port | lag>
+
+// Definir porta secundária
+DmOS(config-eaps-0)#port secondary <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> <chassis/slot/port | lag>
+
+// Definir a VLAN de controle
+DmOS(config-eaps-0)#control-vlan <1-4094>
+
+// Definir quais VLANs serão protegidas
+DmOS(config-eaps-0)#protected-vlans <1-4094>

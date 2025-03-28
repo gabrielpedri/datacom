@@ -1,0 +1,23 @@
+// Link Aggregation: Modo Estático - IEEE 802.3ad
+
+// Criar o Link-Aggregation
+DmOS(config)#link-aggregation interface lag <1-32>
+
+// Modo estático
+DmOS(config-la-if-lag-1)#mode static
+
+// Inserir uma descrição para o Link-Aggregation
+DmOS(config-la-if-lag-1)#description <text>
+
+// Associar as interfaces ao Link-Aggregation
+DmOS(config-la-if-lag-1)#interface <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> <chassis/slot/port>
+
+// Configuração de links ativos e em standby
+DmOS(config-la-if-lag-1)#minimum-active links <1-16>
+DmOS(config-la-if-lag-1)#maximum-active links <1-16>
+
+// Verificar o Link-Aggregation
+DmOS#show running-config link-aggregation
+DmOS#show running-config link-aggregation | tab
+DmOS#show link-aggregation brief
+DmOS#show link-aggregation interfaces brief

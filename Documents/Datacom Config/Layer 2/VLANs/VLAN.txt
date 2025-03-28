@@ -1,0 +1,13 @@
+// VLAN
+
+// Criar uma VLAN
+DmOS(config)#dot1q vlan <1-4094> name <name_vlan> interface <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> <chassis/slot/port> <tagged | untagged>
+
+// Associar a interface Untagged ao Native VLAN
+DmOS(config)#switchport interface <gigabit-ethernet | ten-gigabit-ethernet | forty-gigabit-ethernet | hundred-gigabit-ethernet> <chassis/slot/port> native-vlan vlan-id <1-4094>
+
+// Verificar as VLANs criadas
+DmOS#show running-config dot1q | tab
+DmOS#show vlan brief | tab
+DmOS#show vlan membership detail | tab
+DmOS#show mac-address-table
